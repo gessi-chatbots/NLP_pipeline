@@ -33,6 +33,7 @@ one_app_test = {
 app_test = json.dumps(one_app_test)
 one_app_res = requests.post('http://localhost:9406/keywords-extraction/requirements?stemmer=false', data=app_test, headers=headers)
 
+
 one_app_results = json.loads(one_app_res.text)
 
 info = json.dumps(formatted_info)

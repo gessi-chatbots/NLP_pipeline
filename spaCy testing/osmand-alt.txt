@@ -1,0 +1,29 @@
+OsmAnd is a map and navigation application with access to the free, worldwide, and high-quality OpenStreetMap data.
+Enjoy voice and optical navigator, viewing POIs (points of interest), creating and managing GPX tracks, using contour lines visualization and altitude info (through plugin), a choice between driving, cycling, pedestrian modes, OSM editing and much more.
+
+Navigation
+• Works online (fast) or offline (no roaming charges when you are abroad)
+• Turn-by-turn voice guidance (recorded and synthesized voices)
+• Optional lane guidance, street name display, and estimated time of arrival
+• Supports intermediate points on your itinerary
+• Automatic rerouting whenever you deviate from the route
+• Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates
+
+Map Viewing
+• Display your position and orientation
+• Optionally align the picture according to compass or your direction of motion
+• Save your most important places as Favorites
+• Display POIs (point of interests) around you
+• Display specialized online tiles, satellite view (from Bing), different overlays like touring/navigation GPX tracks and additional layers with customizable transparency
+• Optionally display place names in English, local, or phonetic spelling
+
+OSM Data
+• High-quality information from the best collaborative projects of the world
+• OSM data available per country or region
+• Compact offline vector maps updated at least once a month
+
+Safety Features
+• Optional automated day/night view switching
+• Optional speed limit display, with reminder if you exceed it
+• Optional speed-dependent zooming
+• Share your location so that your friends can find you
