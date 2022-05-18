@@ -56,8 +56,6 @@ syntactic_dependencies = ['dobj', 'advcl', 'attr']
 additional_dependencies = ['appos', 'conj', '']
 
 alt_document = nlp(text)
-for sent in alt_document.sents:
-    print(sent)
 alt_chunks = []
 
 chunks = {}
