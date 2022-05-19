@@ -95,7 +95,10 @@ for i in range(3):
                 true_positives.append(chunk)
     precision = round(len(true_positives) / len(chunks[i]), 3)
     recall = round(len(true_positives) / len(expected_results), 3)
-    f_score = round(2 * (precision * recall) / (precision + recall), 3)
+    if precision+recall == 0:
+        f_score = 0
+    else:
+        f_score = round(2 * (precision * recall) / (precision + recall), 3)
     metrics.append((precision, recall, f_score))
     for j in range(3):
         if i != j:
