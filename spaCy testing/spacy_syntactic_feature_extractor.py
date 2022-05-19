@@ -65,53 +65,59 @@ with open(arguments.expected_results, 'r', encoding='utf-8') as file:
 
 expected_results = [x.lower() for x in raw_expected_results]
 
-syntactic_dependencies = ['dobj', 'advcl', 'attr']
-additional_dependencies = ['appos', 'conj', '']
+syntactic_dependencies = [
+    ['dobj', 'advcl', 'attr'],
+    ['dobj', 'advcl', 'attr', 'appos'],
+    ['dobj', 'advcl', 'attr', 'conj'],
+    ['dobj', 'advcl', 'attr', 'conj', 'appos']
+    ]
+# additional_dependencies = ['appos', 'conj', '']
 
 alt_document = nlp(text)
 alt_chunks = []
 
 chunks = {}
-for i in range(3):
+for syntactic_dependency in syntactic_dependencies:
     alt_chunks = []
     for chunk in alt_document.noun_chunks:
-        if chunk.root.dep_ in syntactic_dependencies:
+        if chunk.root.dep_ in syntactic_dependency:
             alt_chunks.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
-    chunks[i] = alt_chunks
+    chunks[','.join(syntactic_dependency)] = alt_chunks
     with open('osmand_alt_automatic_features.txt', 'a', encoding='utf-8') as file:
         print(syntactic_dependencies, file=file)
         for chunk in alt_chunks:
             print(chunk, file=file)
-    syntactic_dependencies.append(additional_dependencies[i])
 
 intersections = {}
 differences = {}
-metrics = []
-for i in range(3):
+metrics = {}
+for syntactic_dependency in syntactic_dependencies:
     true_positives = []
-    for chunk in chunks[i]:
+    for chunk in chunks[','.join(syntactic_dependency)]:
         for expected in expected_results:
             if expected in chunk or chunk in expected:
                 true_positives.append(chunk)
-    precision = round(len(true_positives) / len(chunks[i]), 3)
+    precision = round(len(true_positives) / len(chunks[','.join(syntactic_dependency)]), 3)
     recall = round(len(true_positives) / len(expected_results), 3)
     if precision+recall == 0:
         f_score = 0
     else:
         f_score = round(2 * (precision * recall) / (precision + recall), 3)
-    metrics.append((precision, recall, f_score))
-    for j in range(3):
-        if i != j:
-            inters = [x for x in chunks[i] if x in chunks[j]]
-            intersections[f'{i} inters {j}'] = inters
-            diff = [x for x in chunks[i] if x not in chunks[j]]
+    metrics[','.join(syntactic_dependency)] = (precision, recall, f_score)
+    for syntactic_dependency_to_compare in syntactic_dependencies:
+        if syntactic_dependency != syntactic_dependency_to_compare:
+            first_dep = ','.join(syntactic_dependency)
+            second_dep = ','.join(syntactic_dependency_to_compare)
+            inters = [x for x in chunks[first_dep] if x in chunks[second_dep]]
+            intersections[f'{first_dep} inters {second_dep}'] = inters
+            diff = [x for x in chunks[first_dep] if x not in chunks[second_dep]]
             if diff:
-                differences[f'{i} minus {j}'] = diff
+                differences[f'{first_dep} minus {second_dep}'] = diff
 
 with open(f'metrics-for{arguments.expected_results}.txt', 'w', encoding='utf-8') as file:
-    print(f'precision\trecall\tf-score', file=file)
-    for metric in metrics:
-        print(f'{metric[0]}\t{metric[1]}\t{metric[2]}', file=file)
+    print(f'dependencies\tprecision\trecall\tf-score', file=file)
+    for dep, metric in metrics.items():
+        print(f'{dep}\t{metric[0]}\t{metric[1]}\t{metric[2]}', file=file)
 
 with open('differences.txt', 'w', encoding='utf-8') as file:
     for k, element in differences.items():
