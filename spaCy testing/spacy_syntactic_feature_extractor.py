@@ -71,7 +71,6 @@ syntactic_dependencies = [
     ['dobj', 'advcl', 'attr', 'conj'],
     ['dobj', 'advcl', 'attr', 'conj', 'appos']
     ]
-# additional_dependencies = ['appos', 'conj', '']
 
 alt_document = nlp(text)
 alt_chunks = []
@@ -83,7 +82,7 @@ for syntactic_dependency in syntactic_dependencies:
         if chunk.root.dep_ in syntactic_dependency:
             alt_chunks.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
     chunks[','.join(syntactic_dependency)] = alt_chunks
-    with open('osmand_alt_automatic_features.txt', 'a', encoding='utf-8') as file:
+    with open(f'{arguments.text_file}.txt', 'a', encoding='utf-8') as file:
         print(syntactic_dependencies, file=file)
         for chunk in alt_chunks:
             print(chunk, file=file)
