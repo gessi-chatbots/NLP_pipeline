@@ -42,4 +42,6 @@ for i in range(10):
     results[f'threshold {i}'] = metrics
     positives[f'threshold {i}'] = true_positives
 
-print(results)
+with open("evaluation.json", 'w', encoding='utf-8') as file:
+    print(json.dumps(results,indent=4), file=file)
+    print(json.dumps(positives, indent=4), file=file)
