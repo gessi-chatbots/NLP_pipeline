@@ -1,0 +1,313 @@
+app_name,description
+OsmAnd,"OsmAnd is a map and navigation application with access to the free, worldwide, and high-quality Small OpenStreetMap iconOpenStreetMap data.
+Enjoy voice and optical navigator, viewing POIs (points of interest), creating and managing GPX tracks, using contour lines visualization and altitude info (through plugin), a choice between driving, cycling, pedestrian modes, OSM editing and much more.
+
+Navigation
+• Works online (fast) or offline (no roaming charges when you are abroad)
+• Turn-by-turn voice guidance (recorded and synthesized voices)
+• Optional lane guidance, street name display, and estimated time of arrival
+• Supports intermediate points on your itinerary
+• Automatic re-routing whenever you deviate from the route
+• Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates
+
+Map Viewing
+• Display your position and orientation
+• Optionally align the picture according to compass or your direction of motion
+• Save your most important places as Favorites
+• Display POIs (point of interests) around you
+• Display specialized online tiles, satellite view (from Bing), different overlays like touring/navigation GPX tracks and additional layers with customizable transparency
+• Optionally display place names in English, local, or phonetic spelling
+
+OSM Data
+• High-quality information from the best collaborative projects of the world
+• OSM data available per country or region
+• Compact offline vector maps updated at least once a month
+
+Safety Features
+• Optional automated day/night view switching
+• Optional speed limit display, with reminder if you exceed it
+• Optional speed-dependent zooming
+• Share your location so that your friends can find you"
+Trekarta,"Trekarta is designed for hiking, cycling, geocaching, off-roading, boating and all other outdoor activities. It uses offline topo maps so you do not need to have internet connection. You can easily create places and share them to others. It lets you write the track of your journey, even in background, so you will never get lost and be able later see where you've been.
+
+Offline maps
+
+Trekarta uses OpenStreetMap based vector maps that are lightweight, offline and are constantly enhanced by contributors. Maps contain detailed topological data with elevation contours. Some map elements can be filtered out for cleaner look. Trekarta has built-in hillshades support.
+
+Hiking
+
+Special hiking activity mode emphasises paths and tracks on map. It visualizes path difficulty and visibility and displays hiking routes. It also displays special OSMC symbols that help you identify desired route.
+
+Cycling
+
+Cycling activity mode reveals bicycle infrastructure. It shows cycling routes and visualizes mountain biking track difficulty and visibility.
+
+Skiing and skating
+
+Skiing activity mode displays clean winter map with mostly all skiing activities: downhill, nordic, hiking and touring. As a bonus freestyle snow-boarding, skating and sleighing areas are displayed.
+
+Off-road
+
+Unpaved, dirt, winter and ice roads are specially visualized. 4wd only roads have specific marking. Fords are displayed on all roads, even primary.
+
+Places
+
+Places can be easily created within application. You can navigate to places and share them with others.
+
+Tracks
+
+Trekarta is designed to record tracks of your journey. Simply press a button when you start and press it once more when you finish. You can quit the application if you do not need to look at the map, the track will be recorded in the background."
+iNaturalist,"Get outside, and observe an individual organism. Pick something wild and take a clear, full frame photo. If you already have a photo of something wild, add it now. You can also use the iNaturalist mobile apps to record observations.
+
+Once you've shared your observations, this page will show you updates from the community in the form of comments and identifications. Who knows what you'll discover!"
+AAT,"Android Activity Tracker is a GPS-tracking application for tracking sportive activities, with emphasis on cycling.
+It uses MapsForge to display map tiles and off-line maps from the OpenStreetMap project.
+
+Features
+
+Display live tracking on different cockpit and map views
+Offline as well as tile based map
+Tile based overlays for displaying cycle and hiking routes (Waymarked Trails)
+Integration of Overpass and Nominatim
+Simple GPX editor for quick route planing
+GPS independent altitude information and hill shading"
+RunnerUp,"RunnerUp - A open source run tracker inspired by Garmin 410, Small RunKeeper iconRunKeeper and EveryWhere Run. 
+
+Track your running with RunnerUp using the GPS in your Android phone.
+
+Track your running activities:
+- See detailed stats around your pace, distance and time.
+- Get stats and progress through your headphones with built-in highly configurable audio cues.
+- Easily configure and run effective interval workouts modelled after Garmin 410
+
+Upload your activities to a variety of running sites with single click:
+- RunKeeper
+- MapMyRun
+- Small Garmin Connect iconGarmin Connect
+- Funbeat"
+GPSLogger,GPSLogger uses the GPS capabilities of your Android phone to log coordinates to GPS format files at regular intervals. This can be particularly useful if you want to geotag your photos after a day out or share your travel route with someone. The purpose of this application is to be battery efficient to save you battery power when abroad and last as long as possible.
+Graphhoper,"A fast, flexible and open source routing library and server based on OpenStreetMap data. We offer consulting and the GraphHopper Directions API for business."
+Organic Maps,"Organic Maps is an Android & iOS offline maps app for travelers, tourists, hikers, and cyclists based on top of crowd-sourced OpenStreetMap data and curated with love by MAPS.ME founders.
+
+• Detailed offline maps with places that don't exist on other maps
+• Cycling routes, hiking trails and walking paths
+• Contour lines, elevation profiles, peaks and slopes
+• Turn-by-turn walking, cycling and car navigation with voice guidance
+• Fast offline search on the map and bookmarks
+• Dark mode to protect your eyes
+
+Organic Maps is pure and organic, made with love:
+
+• Respects your privacy
+• Saves your battery
+• No unexpected mobile data charges
+
+Organic Map is free from trackers and other bad stuff:
+
+• No ads
+• No tracking
+• No data collection
+• No phoning home
+• No annoying registration
+• No mandatory tutorials
+• No noisy email spam
+• No push notifications
+• No crapware
+• No pesticides
+
+At Organic Maps, we believe that privacy is a fundamental human right:
+
+• Organic Maps is an indie community-driven open-source project
+• We protect privacy from Big Tech’s prying eyes
+• Stay safe no matter wherever you are
+
+Zero trackers found according to Exodus Privacy Report. No excessive permissions requested."
+Loop Habit Tracker,"Loop is an open source application and does not contain any form of advertising.
+Simple, nice and modern interface."
+Sky Map ,"Sky Map (formerly the Google Sky Map) turns your Android-powered mobile phone into a window on the night sky. 
+Figure out what you're looking at:
+Point your phone at the sky, and Sky Map will show the stars, planets, constellations, and more to help you identify the celestial objects in view. You can also browse the skies in manual mode. "
+OSMTracker,"OSMTracker stands for OpenStreetMap Tracker. It allows you to track your journey and mark significant way points. Way points can be marked with a tag using a button, with a quick voice record, a text note or by taking a picture. The various button pages and layouts [can be customized](Custom buttons layouts) to suit your OpenStreetMap activities."
+Simplenote,"Made by the company behind Small WordPress iconWordPress, Simplenote enables users to take notes, lists, and ideas. These notes are stored on the cloud and are accessible across multiple devices.
+
+Simplenote's both client and server components are free and open-source. However, the service component of Simplenote requires free registration and accepting the terms of service."
+Super Productivity ,"This is a ToDo List / Time Tracker / Personal Jira Task Manager for Linux, MacOS and Windows to make you work super productively.
+
+* Plan, track & summarize. Create time sheets and work summaries in a breeze to easily export them to your companies time tracking system.
+
+* Integrate with Jira, Github and Gitlab. Auto import tasks assigned to you, plan the details locally, automatically create worklogs and get notified right away, when something changes.
+
+* Organize your project's data. Create notes, attach files or create bookmarks for links, files and even commands and have it all out of the way, once you're ready for the weekend.
+
+* Helps you to establish healthy habits. A break timer reminds to you, when it's time to step away. You also can collect personal metrics for yourself to see, which of your work routines need adjustments.
+
+* Stuck and procrastinating? No problem! Super Productivity's anti procrastination feature helps you to reconsider your options and a pomodoro timer is also always at hand.
+
+* Super Productivity does NOT collect any data and there are no user accounts or registration. It's free and open source and always will be."
+Track & Graph,"Track & Graph is a tool for self awareness and reflection. Assign a numerical value to something, or just track when it happened and easily create insightful graphs. Use Track & Graph to:
+
+• Track your habits. Overcome bad habits or encourage good ones.
+
+• Track your symptoms. Find the cause of problems like pains by looking for hidden correlations with other factors in your life.
+
+• Track your behaviours. See changes in the frequency of behaviours over long periods of time and how they correlate.
+
+
+Track & Graph is packed with useful features:
+
+• Designed to make frequent tracking as quick and easy as possible. Set up multiple choice answers to make the tracking process super quick, track everything in seconds!
+
+• Set up powerful line graphs that allow you to visualise data whether tracked occasionally or consistently. See moving averages over various time periods from various data sources on the same graph.
+
+• Set up pie charts to clearly show the proportions of data.
+
+• Set up statistics to report useful information like the time since something was tracked or the average time between tracking something.
+
+• Separate everything into groups to take full advantage of the flexibility of the app. Track habits, symptoms and a workout routine all in different groups. Then create groups for any graphs and statistics too.
+
+• Organise any page to your liking by simply holding down and dragging items around.
+
+
+Track & Graph is completely free and open source. There is no authentication, no ads and no in-app purchases. None of your personal information, nothing you track and nothing you do in the app is recorded or stored anywhere online by this app or any third party, hence there is no need of a privacy policy. You can however easily backup your data at any time to your own device or cloud storage service from within the app."
+Remindly,"Remindly is a simple and user friendly Android application to create reminders.
+
+Features
+
+- Material Design UI
+- Repeating reminders. Set intervals in minutes, hours, days, weeks and months
+- Completely free, open-source and ad-free"
+OpenTracks,"OpenTracks is a sport tracking application that completely respects your privacy.
+
+Features:
+* Sport tracking: track your sport and outdoor activities
+* Photos and markers: mark interesting locations while tracking
+* Supports Bluetooth LE sensors:
+* heart rate
+* cycling: speed and cadence
+* Export data: export tracks either as KML or GPX
+* No Internet access: Internet is not used"
+FitoTrack,"FitoTrack is a mobile app for logging and viewing your workouts. Whether you’re running, cycling or hiking, FitoTrack will show you the most important information, with detailed charts and statistics. It is open-source and completely ad-free.
+
+Features:
+
+* Track workouts. Choose the type of sport you would like to track and just start running, cycling or hiking, for example. You can see the general information right below the map on the tracking screen.
+* View your workouts. View general information such as date, time, duration, distance, speed and pace. See your route on a map. Work out your level of performance from the speed diagram.
+* Open-Source. There is neither advertisement nor tracking, and the source code is open and licensed under the GPLv3."
+Calendar Notification Plus,"This app would replace default calendar event notifications, providing snooze functionality and notifications persistence. Reboot is handled, all notifications are restored after reboot. Focus of this app is to keep its operation as transparent as possible, calendar notifications would behave like expected: direct click on notification opens event details in default calendar application, new functionality is provided via actions available for notifications.
+
+On the snooze activity you can also quickly re-schedule event for the next day or week in one click (this is not available for repeating events).
+
+Additional functionality provided by this app:
+
+* Quiet hours
+* Reminders for missed notifications (off by default, interval can be configured)
+* ""Snooze All"" button in the app
+* Custom LED colors / Wake screen on notification (if configured)
+* Custom LED and Vibration patterns
+
+Rationale for requested permissions: 
+* Read Calendar - required to be able to retrieve event details to display notification
+* Write Calendar - necessary to stop stock calendar from showing the same notification 
+* Start at Boot - to restore notifications"
+Forecastie,"Forecastie is a great app for staying updated with the surrounding weather conditions. Forecastie is designed to be as simple and intuitive as possible. This app uses OpenWeatherMap as a data channel and the weather updates are tiny so that you would not use up any significant internet bandwith.
+
+FEATURES
+» Supports geo-positioning to retrieving the weather conditions for your current location. Manual location input is also supported.
+» Weather map to show rain, wind speed and temperature.
+» Detailed 5 day forecast graphs.
+» Intuitive, seamless user interface and simple design.
+» Support for widgets.
+» Choice of many units.
+» Dark mode.
+» Offline functionality when there's no internet connectivity."
+QField,"QGIS, formerly Quantum GIS, is a user friendly open source Geographic Information System (GIS) licensed under the GNU General Public License that runs on Linux, Unix, Mac OSX, and Windows and supports numerous vector, raster, and database formats and functionalities.
+
+QGIS lets you browse, edit and create a variety of vector and raster formats, including ESRI shapefiles, spatial data in PostgreSQL/PostGIS, GRASS vectors and rasters, or GeoTiff. You can create customised plugins and GIS enabled applications using Python or C++. Maps can be compiled for printing using the print composer.
+
+QGIS supports plugins to do things like import of delimited text data, download tracks, routes, and waypoints from your GPS or visualize OGC WMS and WFS layers."
+Etar,"Why?
+
+I wanted a simple, material design, state of the art open source calendar that anyone can improve on.
+
+Features:
+
+- Month view.
+- Week, day & agenda view.
+- Uses Android calendar sync. Works with Google Calendar, Exchange, Etesync etc.
+- Material design.
+- Agenda widget.
+- Dark theme.
+
+Etar is an enhanced version of AOSP Calendar. Without the help of the Free Software for Android team, this app would be just a dream. So, many thanks to them!"
+Simple Calendar ,"A simple calendar with optional CalDAV synchronization. You can easily create recurring events and setup reminders, it can also display week numbers.
+
+Contains a monthly view and an event list widget where you can customize the color of the text, as well as the alpha and the color of the background.
+
+Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+The Storage permission is needed only for exporting or importing events from .ics files.
+
+The Contacts permission is used only at importing contact birthdays and anniversaries.
+
+This app is just one piece of a bigger series of apps. You can find the rest of them at https://www.simplemobiletools.com"
+Githo ,"Get Into The Habit Of…
+
+Acquiring habits that stick can be difficult. Githo helps you by letting you gradually advance, instead of going from 0 to 100%.
+This principle borrows ideas from exposure therapy.
+
+Define levels of your final habit, going from easy to hard. Then start with the first one. Level up by consistently succeeding. If a level is too difficult (= if success isn't consistent), repeat the previous one.
+
+Such a gradual acquisition reduces the physical/mental strain and helps you create a routine long before arriving at the final habit.
+
+Example of a Habit-Plan:
+Final Habit: Go jogging every morning
+Levels: Every morning...
+
+
+Week 1: Just step outside on the street, then return home.
+
+Week 2: Take a walk around your house/building.
+
+Week 3: Take a walk spanning 3-5 buildings.
+
+Week 4: Take a longer walk and add short jogging-segments into the mix.
+
+Week 5: Go jogging. Well done."
+Workout Time! ,"An app for managing and performing timed workouts.
+
+Home Screen
+
+Lists all workouts (the app comes with two predefined workouts, and others can be created or imported). Tapping on the pencil icon on the left of a workout will go to the Edit Screen, tapping on the title or duration of a workout will start it from the beginning, tapping on the ""v"" symbol on the right will show a list of the exercises it contains. Each exercise has a preparation/rest time before it (shown on the left), and a duration (shown on the right). Tapping on an exercise in the list will start the workout at that exercise. To add a new workout, tap on the ""+"" button on the bottom right corner and select ""Create"" to build it from scratch or ""Import"" to load a workout in JSON format. At the top-right corner of the home screen are two icons: a calendar with a checkmark in it (tapping this will go to the Log Screen) and a gear (tapping this will go to the Settings Screen).
+
+Workout Screen
+
+When a workout is running there is a progress bar at the top showing the current point in the workout, with the time elapsed on the left and the time remaining (indicated with a ""-"") on the right. In between these two times are a series of dots that represent the exercises in the workout, with the current exercise highlighted in blue. Below this is the name of the current exercise. During the exercise preparation time the name will have ""Get ready for"" before it (tapping on this will skip the preparation and begin the exercise). Below the exercise name is a stopwatch showing the current progress in that exercise, with the remaining time in the middle. Tapping on the stopwatch will pause the workout (indicated by blinking time inside the stopwatch), and tapping again will resume it. At the bottom of the screen is the name of the next exercise. Tapping on this will skip to the next exercise."
+World Weather,"An Android app that uses the Open Weather Map (http://openweathermap.org/API) to display current weather conditions and weather forecast in selected world cities. You can search and add your own locations (the data is collected from over 40000 weather stations around the world).
+
+Two kinds of weather forecast are available: 16-day daily weather forecast, and three-hourly forecast for up to 5 days."
+Signal ,"Using Signal, you can communicate instantly with your relatives without making a compromise on privacy or security. Make video calls, send messages, pictures, videos, documents, voice recordings, GIFs, contacts & location, create groups so that you can chat in real time with all your friends at once and react to their messages with emojis -all with complete privacy-. Signal servers never have access to any of your communications and never store any of your data.
+
+* Say Anything - Share text, voice messages, photos, videos, GIFs and files for free. Signal uses your phone's data connection so you can avoid SMS and MMS fees.
+* Speak Freely - Make crystal-clear voice and video calls to people who live across town, or across the ocean, with no long-distance charges.
+* Make Privacy Stick - Add a new layer of expression to your conversations with encrypted stickers. You can also create and share your own sticker packs.
+* Get Together with Groups - Group chats make it easy to stay connected to your family, friends, and coworkers.
+* No ads. No trackers. No kidding. - There are no ads, no affiliate marketers, and no creepy tracking in Signal. So focus on sharing the moments that matter with the people who matter to you.
+* Remain Connected - Push notifications let you know when new messages have arrived, and they'll be waiting for you even if your battery dies or you temporarily lose service.
+* View Source - All of our code is free, open, and available on GitHub (https://github.com/signalapp).
+* Join Movements - Technology developed by Open Whisper Systems is trusted and used by millions of people around the world every day."
+Element,"Element is a Matrix-based end-to-end encrypted (E2EE) secure collaboration and messaging app.
+
+It provides instant messaging, voice and video calls, screen sharing and file sharing; for 1:1s to huge chat rooms. It’s available to use across Web, Android, iOS, macOS, Windows & Linux.
+
+Its decentralised design delivers digital sovereignty, enabling deployment on-premise or through any cloud provider.
+
+Element Matrix Services (EMS) is the most popular SaaS for corporate use of Element. EMS provides fast performance and enterprise-grade add-ons.
+
+Being Matrix-based, Element provides interoperability between traditional siloed apps. It can bridge into proprietary ‘walled garden’ systems such as Slack, Microsoft Teams, WhatsApp, Signal, Telegram and Discord to enable easy connections between different organisations.
+
+End-to-end encryption is provided by default to keep users’ conversations and files safe. Cross-signed device verification uses QR codes or emoji comparisons to guard against imposters and eavesdropping.
+
+Element is built on the Small Matrix.org iconMatrix.org open standard which provides bridges to other systems such as Slack, IRC and a lot more soon."
+Geometric Weather,"Geometric Weather is a light and powerful weather app that provides you with real-time temperature, air quality, 15-days weather forecast, and accurate time-sharing trends.
+
+Geometry Weather can provide you Beautiful Material Design Interface, Global Weather Data, Automatic Dark Mode, 15 Days And 24 Hours Overview data, Powerful Desktop Widget, Weather Notification And Forecast, Alert Information, Multiple UI Styles and Live Weather Wallpaper."

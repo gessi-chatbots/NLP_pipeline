@@ -1,0 +1,16 @@
+is a map and navigation application
+enjoy voice and optical navigator
+viewing pois
+managing gpx tracks
+using contour lines visualization
+enjoy a choice
+supports intermediate points
+display your position
+align the picture
+save your most important places
+display pois
+display specialized online tiles
+display place names
+exceed it
+share your location
+find you

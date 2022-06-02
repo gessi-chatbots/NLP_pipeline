@@ -1,0 +1,14 @@
+replace default calendar event notifications
+providing snooze functionality
+keep its operation
+opens event details
+schedule event
+repeating events
+wake screen
+read calendar
+retrieve event details
+display notification
+write calendar
+stop stock calendar
+showing the same notification
+restore notifications

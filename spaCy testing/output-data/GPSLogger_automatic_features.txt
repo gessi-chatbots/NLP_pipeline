@@ -1,0 +1,5 @@
+uses the gps capabilities
+log coordinates
+geotag your photos
+share your travel route
+save battery power

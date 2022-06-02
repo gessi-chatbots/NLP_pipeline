@@ -1,0 +1,23 @@
+uses offline topo maps
+have internet connection
+create places
+share them
+write the track
+uses openstreetmap based vector maps
+contain detailed topological data
+has built-in hillshades support
+emphasises paths
+visualizes path difficulty
+displays hiking routes
+displays special osmc symbols
+identify desired route
+reveals bicycle infrastructure
+shows cycling routes
+visualizes mountain biking track difficulty
+displays clean winter map
+have specific marking
+share them
+record tracks
+press a button
+press it
+quit the application

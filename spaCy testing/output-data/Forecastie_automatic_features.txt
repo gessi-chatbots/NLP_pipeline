@@ -1,0 +1,9 @@
+is a great app
+uses openweathermap
+use any significant internet bandwith
+supports geo
+supports -
+supports positioning
+retrieving the weather conditions
+show rain
+'s no internet connectivity

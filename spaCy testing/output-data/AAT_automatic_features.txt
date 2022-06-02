@@ -1,0 +1,6 @@
+is a gps-tracking application
+tracking sportive activities
+uses mapsforge
+display map tiles
+display live tracking
+displaying cycle and hiking routes

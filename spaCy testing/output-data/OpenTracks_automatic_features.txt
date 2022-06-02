@@ -1,0 +1,7 @@
+is a sport tracking application
+respects your privacy
+track your sport
+mark interesting locations
+supports bluetooth le sensors
+export data
+export tracks

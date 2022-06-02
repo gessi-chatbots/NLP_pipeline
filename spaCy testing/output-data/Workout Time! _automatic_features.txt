@@ -1,0 +1,19 @@
+performing timed workouts
+lists all workouts
+start it
+show a list
+has a preparation/rest time
+start the workout
+add a new workout
+build it
+load a workout
+tapping this
+tapping this
+is a progress bar
+showing the current point
+represent the exercises
+skip the preparation
+begin the exercise
+showing the current progress
+pause the workout
+resume it

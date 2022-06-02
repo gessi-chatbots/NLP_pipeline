@@ -1,0 +1,3 @@
+uses the open weather map
+display current weather conditions
+add your own locations

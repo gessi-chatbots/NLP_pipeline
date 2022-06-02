@@ -1,0 +1,10 @@
+is a user friendly open source geographic information system
+supports numerous vector, raster, and database formats
+create a variety
+create customised plugins
+using python
+using the print composer
+supports plugins
+do things
+download tracks
+visualize ogc wms and wfs layers

@@ -1,0 +1,4 @@
+is a simple and user friendly android application
+create reminders
+repeating reminders
+set intervals
