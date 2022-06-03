@@ -67,9 +67,9 @@ expected_results = [x.lower() for x in raw_expected_results]
 
 syntactic_dependencies = [
     ['dobj', 'advcl', 'attr'],
-    # ['dobj', 'advcl', 'attr', 'appos'],
-    # ['dobj', 'advcl', 'attr', 'conj'],
-    # ['dobj', 'advcl', 'attr', 'conj', 'appos']
+    ['dobj', 'advcl', 'attr', 'appos'],
+    ['dobj', 'advcl', 'attr', 'conj'],
+    ['dobj', 'advcl', 'attr', 'conj', 'appos']
     ]
 
 alt_document = nlp(text)
