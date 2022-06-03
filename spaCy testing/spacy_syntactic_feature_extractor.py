@@ -67,9 +67,9 @@ expected_results = [x.lower() for x in raw_expected_results]
 
 syntactic_dependencies = [
     ['dobj', 'advcl', 'attr'],
-    ['dobj', 'advcl', 'attr', 'appos'],
-    ['dobj', 'advcl', 'attr', 'conj'],
-    ['dobj', 'advcl', 'attr', 'conj', 'appos']
+    # ['dobj', 'advcl', 'attr', 'appos'],
+    # ['dobj', 'advcl', 'attr', 'conj'],
+    # ['dobj', 'advcl', 'attr', 'conj', 'appos']
     ]
 
 alt_document = nlp(text)
@@ -82,7 +82,7 @@ for syntactic_dependency in syntactic_dependencies:
         if chunk.root.dep_ in syntactic_dependency:
             alt_chunks.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
     chunks[','.join(syntactic_dependency)] = alt_chunks
-    with open(f'{arguments.text_file}.txt', 'a', encoding='utf-8') as file:
+    with open(f'{arguments.text_file}-features.txt', 'a', encoding='utf-8') as file:
         print(syntactic_dependencies, file=file)
         for chunk in alt_chunks:
             print(chunk, file=file)
