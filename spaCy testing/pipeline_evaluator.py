@@ -36,12 +36,17 @@ extracted_features = extract_features(description_text, dependencies, nlp)
 initial = 0.1
 results = {}
 positives = {}
+synonyms_for_threshold = {}
 for i in range(10):
     threshold = initial*i
-    metrics, true_positives = assess_quality(extracted_features, raw_expected_results, 'similarity', threshold=threshold)
+    metrics, true_positives, synonyms = assess_quality(extracted_features, raw_expected_results, 'similarity', threshold=threshold)
     results[f'threshold {i}'] = metrics
     positives[f'threshold {i}'] = true_positives
+    synonyms_for_threshold[f'threshold {i}'] = synonyms
 
 with open("evaluation.json", 'w', encoding='utf-8') as file:
-    print(json.dumps(results,indent=4), file=file)
+    print(json.dumps(results, indent=4), file=file)
     print(json.dumps(positives, indent=4), file=file)
+
+with open("synonyms.json", 'w', encoding='utf-8') as file:
+    print(json.dumps(synonyms_for_threshold, indent=4), file=file)
