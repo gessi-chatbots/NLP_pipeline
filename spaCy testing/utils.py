@@ -1,7 +1,16 @@
 import json
 
 import spacy
+import numpy
 from spacy import Language
+from sentence_transformers import SentenceTransformer
+from numpy import dot, linalg
+
+
+def cosine_similarity(sentence1, sentence2) -> float:
+    numerator = numpy.dot(sentence1, sentence2)
+    denominator = numpy.linalg.norm(sentence1)*numpy.linalg.norm(sentence2)
+    return numerator/denominator
 
 
 def extract_features(text: str, relevant_dependencies: list, nlp_pipeline: Language) -> list:
@@ -25,15 +34,15 @@ def get_string_matchings(extracted_features, expected_output):
 
 
 def get_synonyms(extracted_features, expected_output, threshold=0.8):
-    nlp_pipeline = spacy.load('en_core_web_md')
+    sentence_embedding_generator = SentenceTransformer('distiluse-base-multilingual-cased')
     true_positives = []
     synonyms = {}
-    extracted_features_embeddings = [nlp_pipeline(sent) for sent in extracted_features]
-    expected_output_embeddings = [nlp_pipeline(sent) for sent in expected_output]
+    extracted_features_embeddings = [sentence_embedding_generator.encode(feature) for feature in extracted_features]
+    expected_output_embeddings = [sentence_embedding_generator.encode(output) for output in expected_output]
     for i, feature_embedding in enumerate(extracted_features_embeddings):
         current_feature_synonyms = []
         for j, expected_embedding, in enumerate(expected_output_embeddings):
-            similarity = feature_embedding.similarity(expected_embedding)
+            similarity = cosine_similarity(feature_embedding, expected_embedding)
             if similarity >= threshold:
                 if extracted_features[i] not in true_positives:
                     true_positives.append(extracted_features[i])
