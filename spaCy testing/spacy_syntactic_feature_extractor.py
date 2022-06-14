@@ -1,6 +1,5 @@
 import argparse
 import json
-import sys
 
 import spacy
 from spacy import Language
@@ -66,10 +65,10 @@ with open(arguments.expected_results, 'r', encoding='utf-8') as file:
 expected_results = [x.lower() for x in raw_expected_results]
 
 syntactic_dependencies = [
-    ['dobj', 'advcl', 'attr'],
-    ['dobj', 'advcl', 'attr', 'appos'],
-    ['dobj', 'advcl', 'attr', 'conj'],
-    ['dobj', 'advcl', 'attr', 'conj', 'appos']
+    ['dobj', 'advcl'],
+    ['dobj', 'advcl', 'appos'],
+    ['dobj', 'advcl', 'conj'],
+    ['dobj', 'advcl', 'conj', 'appos']
     ]
 
 alt_document = nlp(text)
@@ -80,7 +79,9 @@ for syntactic_dependency in syntactic_dependencies:
     alt_chunks = []
     for chunk in alt_document.noun_chunks:
         if chunk.root.dep_ in syntactic_dependency:
-            alt_chunks.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
+            feature = f'{chunk.root.head.text.lower()} {chunk.text.lower()}'
+            if feature not in alt_chunks:
+                alt_chunks.append(feature)
     chunks[','.join(syntactic_dependency)] = alt_chunks
     with open(f'{arguments.text_file}-features.txt', 'a', encoding='utf-8') as file:
         print(syntactic_dependencies, file=file)
