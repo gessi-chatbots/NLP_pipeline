@@ -14,12 +14,13 @@ def cosine_similarity(sentence1, sentence2) -> float:
     return numerator / denominator
 
 
-def analyze_sentiment(text: str) -> float:
+def analyze_sentiment(text: str) -> tuple:
     nlp = spacy.load("en_core_web_md")
     nlp.add_pipe('spacytextblob')
     doc = nlp(text)
     polarity = doc._.blob.polarity
-    return polarity
+    subjectivity = doc._.blob.subjectivity
+    return polarity, subjectivity
 
 
 def extract_features(text: str, relevant_dependencies: list, nlp_pipeline: Language) -> list:

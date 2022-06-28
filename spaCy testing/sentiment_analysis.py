@@ -2,7 +2,7 @@ import json
 
 import utils
 
-with open("nlp.json",'r',encoding='utf-8') as file:
+with open("nlp.json", 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 reviews = []
@@ -13,8 +13,8 @@ for review in aux:
 evaluations = {}
 for review in reviews[:20]:
     result = utils.analyze_sentiment(review)
-    evaluations[review] =  result
+    evaluations[review] = {'polarity': result[0], 'subjectivity': result[1]}
 
 with open('sentiment_analysis_results.json', 'w', encoding='utf-8') as file:
-    to_print = json.dumps(evaluations,indent=4)
-    print(to_print,file=file)
+    to_print = json.dumps(evaluations, indent=4)
+    print(to_print, file=file)
