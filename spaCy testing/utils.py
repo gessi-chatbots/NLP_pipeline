@@ -3,14 +3,23 @@ import json
 import spacy
 import numpy
 from spacy import Language
+from spacytextblob.spacytextblob import SpacyTextBlob
 from sentence_transformers import SentenceTransformer
 from numpy import dot, linalg
 
 
 def cosine_similarity(sentence1, sentence2) -> float:
     numerator = numpy.dot(sentence1, sentence2)
-    denominator = numpy.linalg.norm(sentence1)*numpy.linalg.norm(sentence2)
-    return numerator/denominator
+    denominator = numpy.linalg.norm(sentence1) * numpy.linalg.norm(sentence2)
+    return numerator / denominator
+
+
+def analyze_sentiment(text: str) -> float:
+    nlp = spacy.load("en_core_web_md")
+    nlp.add_pipe('spacytextblob')
+    doc = nlp(text)
+    polarity = doc._.blob.polarity
+    return polarity
 
 
 def extract_features(text: str, relevant_dependencies: list, nlp_pipeline: Language) -> list:
