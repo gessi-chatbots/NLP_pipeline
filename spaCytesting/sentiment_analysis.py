@@ -74,7 +74,7 @@ extreme_reviews = {'most_positive': reviews[max_pol_i], 'most_negative': reviews
                    'average_pol': reviews[av_pol_i], 'average_sub': reviews[av_sub_i]}
 
 # print results
-with open('sentiment_analysis_results.json', 'w', encoding='utf-8') as file:
+with open('for_testing/sentiment_analysis_results.json', 'w', encoding='utf-8') as file:
     to_print = json.dumps(evaluations, indent=4)
     print(to_print, file=file)
 
