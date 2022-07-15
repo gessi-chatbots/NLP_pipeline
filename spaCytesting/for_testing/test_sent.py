@@ -11,7 +11,6 @@ temp_pol_res = [evaluated_reviews[x]['polarity'] for x in evaluated_reviews.keys
 pt.hist(temp_pol_res)
 pt.show()
 
-
 upper = 0.2
 lower = -0.2
 
@@ -26,7 +25,7 @@ for review in final_list:
     reviews_features[review] = features
     feature_list = [*feature_list, *features]
 
-with open("../extracted_reviews.json", 'w', encoding='utf-8') as file:
-    print(json.dumps(reviews_features, indent=4),file=file)
+with open("extracted_reviews.json", 'w', encoding='utf-8') as file:
+    print(json.dumps(reviews_features, indent=4), file=file)
     print("Complete feature list:\n")
     print(json.dumps(feature_list, indent=4), file=file)
