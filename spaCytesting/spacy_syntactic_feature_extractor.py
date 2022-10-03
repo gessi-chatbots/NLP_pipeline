@@ -5,14 +5,14 @@ import spacy
 from spacy import Language
 
 
-def clean_text(text_to_clean):
-    new_data = []
-    for individual_text in text_to_clean:
-        doc = nlp(individual_text)
-        result = [token for token in doc if not token.is_punct and token not in stop_words]
-        result = [word for word in result if word.text not in stop_words]
-        new_data.append(' '.join(token.text for token in result))
-    return new_data
+# def clean_text(text_to_clean):
+#     new_data = []
+#     for individual_text in text_to_clean:
+#         doc = nlp(individual_text)
+#         result = [token for token in doc if not token.is_punct and token not in stop_words]
+#         result = [word for word in result if word.text not in stop_words]
+#         new_data.append(' '.join(token.text for token in result))
+#     return new_data
 
 
 def get_keywords(text_to_analyze):
