@@ -11,8 +11,6 @@ class NLPUtils:
         features = []
         for syntactic_dependency in relevant_dependencies:
             for chunk in document.noun_chunks:
-                # if "lots" in chunk.text:
-                #     displacy.serve(document, style="dep")
                 if chunk.root.dep_ in syntactic_dependency and chunk.root.pos_ not in ['PRON']:
                     features.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
 
