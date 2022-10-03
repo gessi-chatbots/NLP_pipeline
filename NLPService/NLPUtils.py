@@ -14,8 +14,6 @@ class NLPUtils:
                 # if "lots" in chunk.text:
                 #     displacy.serve(document, style="dep")
                 if chunk.root.dep_ in syntactic_dependency and chunk.root.pos_ not in ['PRON']:
-                    head = chunk.root.head
-                    print(f'{head.text} is in {head.morph}')
                     features.append(f'{chunk.root.head.text.lower()} {chunk.text.lower()}')
 
         return features
