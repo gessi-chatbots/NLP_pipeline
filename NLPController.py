@@ -21,7 +21,7 @@ def set_boundaries(doc):
     return doc
 
 
-dependencies = ['dobj', 'advcl', 'appos']
+dependencies = ['dobj', 'advcl', 'appos', 'ROOT']
 
 app = flask.Flask(__name__)
 app.config['DEBUG'] = True
@@ -32,17 +32,37 @@ nlp = NLPUtils(nlp_model.get_model())
 
 @app.route('/extract-features', methods=['POST'])
 def get_features():
-    if request.args.get('text', default='true'):
-        try:
-            data = request.get_json()
-        except BadRequest:
-            return "Input data has a formatting error. The service expects a JSON array of textual data.", 400
-        to_return = []
-        for text in data:
-            features = nlp.extract_features(text, dependencies)
-            to_return.extend(features)
-        return json.dumps(to_return)
-    return 0
+    data = None
+    ignore_verbs = request.args.get('ignore-verbs', default='true')
+    if not request.args.get('text', default='true'):
+        return "Lacking textual data in proper tag.", 400
+    try:
+        data = request.get_json()
+    except BadRequest:
+        return "Input data has a formatting error. The service expects a JSON array of textual data.", 400
+
+    to_return = []
+    if ignore_verbs:
+        verbs_to_ignore = data['ignore-verbs']
+    else:
+        verbs_to_ignore = []
+    for text in data['text']:
+        features = nlp.extract_features(text, dependencies, verbs_to_ignore)
+        to_return.extend(features)
+    return json.dumps(to_return)
+    #
+    # ignore_verbs = request.args.get('ignore-verbs', default='true')
+    # if request.args.get('text', default='true'):
+    #     try:
+    #         data = request.get_json()
+    #     except BadRequest:
+    #         return "Input data has a formatting error. The service expects a JSON array of textual data.", 400
+    #     to_return = []
+    #     for text in data:
+    #         features = nlp.extract_features(text, dependencies, ignore_verbs)
+    #         to_return.extend(features)
+    #     return json.dumps(to_return)
+    # return 0
 
 
 app.run()
