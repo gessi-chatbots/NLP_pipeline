@@ -33,36 +33,28 @@ nlp = NLPUtils(nlp_model.get_model())
 @app.route('/extract-features', methods=['POST'])
 def get_features():
     data = None
-    ignore_verbs = request.args.get('ignore-verbs', default='true')
-    if not request.args.get('text', default='true'):
+
+    ignore_verbs = 'ignore-verbs' in request.json.keys()
+    if 'text' not in request.json.keys():
         return "Lacking textual data in proper tag.", 400
+
     try:
         data = request.get_json()
     except BadRequest:
-        return "Input data has a formatting error. The service expects a JSON array of textual data.", 400
+        return "Input data has a formatting error.", 400
 
     to_return = []
+
     if ignore_verbs:
         verbs_to_ignore = data['ignore-verbs']
     else:
         verbs_to_ignore = []
+
     for text in data['text']:
-        features = nlp.extract_features(text, dependencies, verbs_to_ignore)
-        to_return.extend(features)
-    return json.dumps(to_return)
-    #
-    # ignore_verbs = request.args.get('ignore-verbs', default='true')
-    # if request.args.get('text', default='true'):
-    #     try:
-    #         data = request.get_json()
-    #     except BadRequest:
-    #         return "Input data has a formatting error. The service expects a JSON array of textual data.", 400
-    #     to_return = []
-    #     for text in data:
-    #         features = nlp.extract_features(text, dependencies, ignore_verbs)
-    #         to_return.extend(features)
-    #     return json.dumps(to_return)
-    # return 0
+        features = nlp.extract_features(text['text'], dependencies, verbs_to_ignore)
+        to_return.append({'id': text['id'], 'features': features})
+
+    return json.dumps(to_return, indent=4)
 
 
 app.run()
