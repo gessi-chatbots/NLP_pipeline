@@ -1,13 +1,16 @@
-from spacy import Language, displacy
+from spacy import Language
 from spacy.tokens import Span
+from spacytextblob.spacytextblob import SpacyTextBlob
 
 
 class NLPUtils:
 
     def __init__(self, nlp: Language):
         self.nlp = nlp
+        self.nlp.add_pipe('spacytextblob')
 
-    def clean_text(self, text: Span) -> str:
+    @staticmethod
+    def clean_text(text: Span) -> str:
         words = []
         pos = text.root.head.pos_
         for token in text:
@@ -40,7 +43,6 @@ class NLPUtils:
         return features
 
     def analyze_sentiment(self, text: str) -> tuple:
-        self.nlp.add_pipe('spacytextblob')
         doc = self.nlp(text)
         polarity = doc._.blob.polarity
         subjectivity = doc._.blob.subjectivity

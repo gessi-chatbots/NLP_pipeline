@@ -57,4 +57,34 @@ def get_features():
     return json.dumps(to_return, indent=4)
 
 
+@app.route('/review-extraction', methods=['POST'])
+def process_reviews():
+    min_subj = request.json['minSubj'] if 'minSubj' in request.json.keys() else 0
+    max_subj = request.json['maxSubj'] if 'maxSubj' in request.json.keys() else 1
+    min_pol = request.json['minPol'] if 'minPol' in request.json.keys() else -1
+    max_pol = request.json['maxPol'] if 'maxPol' in request.json.keys() else 1
+
+    if 'text' not in request.json.keys():
+        return "Lacking textual data in proper tag.", 400
+
+    ignore_verbs = 'ignore-verbs' in request.json.keys()
+
+    if ignore_verbs:
+        verbs_to_ignore = request.json['ignore-verbs']
+    else:
+        verbs_to_ignore = []
+
+    reviews = request.json['text']
+
+    to_return = []
+
+    for review in reviews:
+        pol, subj = nlp.analyze_sentiment(review['text'])
+        if min_pol <= pol <= max_pol and min_subj <= subj <= max_subj:
+            features = nlp.extract_features(review['text'], dependencies, verbs_to_ignore)
+            to_return.append({'id': review['id'], 'features': features})
+
+    return to_return
+
+
 app.run()
