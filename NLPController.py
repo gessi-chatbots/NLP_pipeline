@@ -24,7 +24,7 @@ def set_boundaries(doc):
 dependencies = ['dobj', 'advcl', 'appos', 'ROOT']
 
 app = flask.Flask(__name__)
-app.config['DEBUG'] = True
+
 
 nlp_model = PipelineBuilder()
 nlp = NLPUtils(nlp_model.get_model())
@@ -87,4 +87,4 @@ def process_reviews():
     return to_return
 
 
-app.run()
+app.run(host='0.0.0.0')
