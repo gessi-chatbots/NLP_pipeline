@@ -45,7 +45,9 @@ Sample payload
         ["verb-to-ignore-in-infitive-form1", "verb-to-ignore-in-infitive-form1"]
 }
 ```
+## Process diagram
 
+![NLP Pipeline process diagram](https://github.com/gessi-chatbots/NLP_pipeline/blob/master/nlp_service_diagram.png?raw=true)
 
 ## License
 
