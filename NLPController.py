@@ -21,70 +21,74 @@ def set_boundaries(doc):
     return doc
 
 
-dependencies = ['dobj', 'advcl', 'appos', 'ROOT']
-
-app = flask.Flask(__name__)
-
-
 nlp_model = PipelineBuilder()
 nlp = NLPUtils(nlp_model.get_model())
 
 
-@app.route('/extract-features', methods=['POST'])
-def get_features():
-    data = None
+def create_app():
+    app = flask.Flask(__name__)
 
-    ignore_verbs = 'ignore-verbs' in request.json.keys()
-    if 'text' not in request.json.keys():
-        return "Lacking textual data in proper tag.", 400
+    @app.route('/extract-features', methods=['POST'])
+    def get_features():
+        data = None
 
-    try:
-        data = request.get_json()
-    except BadRequest:
-        return "Input data has a formatting error.", 400
+        ignore_verbs = 'ignore-verbs' in request.json.keys()
+        received_dependencies = 'dependencies' in request.json.keys()
 
-    to_return = []
+        if 'text' not in request.json.keys():
+            return "Lacking textual data in proper tag.", 400
 
-    if ignore_verbs:
-        verbs_to_ignore = data['ignore-verbs']
-    else:
-        verbs_to_ignore = []
+        try:
+            data = request.get_json()
+        except BadRequest:
+            return "Input data has a formatting error.", 400
 
-    for text in data['text']:
-        features = nlp.extract_features(text['text'], dependencies, verbs_to_ignore)
-        to_return.append({'id': text['id'], 'features': features})
+        to_return = []
 
-    return json.dumps(to_return, indent=4)
+        verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else []
+
+        dependencies = data['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
+
+        for text in data['text']:
+            if type(text) != dict or 'id' not in text.keys() or 'text' not in text.keys():
+                return "Formatting error.", 400
+            features = nlp.extract_features(text['text'], dependencies, verbs_to_ignore)
+            to_return.append({'id': text['id'], 'features': features})
+
+        return json.dumps(to_return, indent=4)
+
+    @app.route('/review-extraction', methods=['POST'])
+    def process_reviews():
+        min_subj = request.json['minSubj'] if 'minSubj' in request.json.keys() else 0
+        max_subj = request.json['maxSubj'] if 'maxSubj' in request.json.keys() else 1
+        min_pol = request.json['minPol'] if 'minPol' in request.json.keys() else -1
+        max_pol = request.json['maxPol'] if 'maxPol' in request.json.keys() else 1
+
+        if 'text' not in request.json.keys():
+            return "Lacking textual data in proper tag.", 400
+
+        ignore_verbs = 'ignore-verbs' in request.json.keys()
+        received_dependencies = 'dependencies' in request.json.keys()
+
+        verbs_to_ignore = request.json['ignore-verbs'] if ignore_verbs else []
+
+        dependencies = request.json['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
+
+        reviews = request.json['text']
+
+        to_return = []
+
+        for review in reviews:
+            pol, subj = nlp.analyze_sentiment(review['text'])
+            if min_pol <= pol <= max_pol and min_subj <= subj <= max_subj:
+                features = nlp.extract_features(review['text'], dependencies, verbs_to_ignore)
+                to_return.append({'id': review['id'], 'features': features})
+
+        return to_return
+
+    return app
 
 
-@app.route('/review-extraction', methods=['POST'])
-def process_reviews():
-    min_subj = request.json['minSubj'] if 'minSubj' in request.json.keys() else 0
-    max_subj = request.json['maxSubj'] if 'maxSubj' in request.json.keys() else 1
-    min_pol = request.json['minPol'] if 'minPol' in request.json.keys() else -1
-    max_pol = request.json['maxPol'] if 'maxPol' in request.json.keys() else 1
-
-    if 'text' not in request.json.keys():
-        return "Lacking textual data in proper tag.", 400
-
-    ignore_verbs = 'ignore-verbs' in request.json.keys()
-
-    if ignore_verbs:
-        verbs_to_ignore = request.json['ignore-verbs']
-    else:
-        verbs_to_ignore = []
-
-    reviews = request.json['text']
-
-    to_return = []
-
-    for review in reviews:
-        pol, subj = nlp.analyze_sentiment(review['text'])
-        if min_pol <= pol <= max_pol and min_subj <= subj <= max_subj:
-            features = nlp.extract_features(review['text'], dependencies, verbs_to_ignore)
-            to_return.append({'id': review['id'], 'features': features})
-
-    return to_return
-
-
-app.run(host='0.0.0.0')
+if __name__ == "__main__":
+    flask_app = create_app()
+    flask_app.run(host='0.0.0.0')

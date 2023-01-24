@@ -31,8 +31,9 @@ This service exposes a NLP component that extracts features from natural languag
 
 ## How to use
 
+### Direct feature extraction
 1. Run NLPController
-2. Send POST request to http://{your-ip}/extract:5000 with the payload described below.
+2. Send POST request to http://{your-ip}/extract-features:5000 with the payload described below.
 3. Receive the results in a JSON array.
 
 Sample payload
@@ -40,11 +41,37 @@ Sample payload
 ```json
 {
   "text":
-        ["some text", "some other text"],
+        [
+          {
+            "id": "some id",
+            "text":  "some text"
+          }
+        ],
   "ignore-verbs":
-        ["verb-to-ignore-in-infitive-form1", "verb-to-ignore-in-infitive-form1"]
+        ["verb-to-ignore-in-infitive-form1", "verb-to-ignore-in-infitive-form1"],
+  "dependencies":
+        ["spacy-dep1", "spacy-dep2"]
 }
 ```
+### Sentiment analysis filtering feature extraction
+
+1. Run NLPController
+2. Send POST request to http://{your-ip}/review-extraction:5000 with the same payload as above.
+3. Provide the polarity and subjectiviy thresholds you are interested in.
+4. Receive the results in a JSON array.
+
+As previously stated, the payload is the same, but you can include subjectivity and polarity thresholds:
+- Subjectivity measures how objective is a text; the higher the score, the less objective.
+- Polarity measures if the text shows a positive or negative sentiment.
+
+To define these thresholds, you can include the following parameters in the request body:
+- maxSubj: Maximum subjectivity the text can have (max allowed value: 1).
+- minSubj: Minimum subjectivity the text can have (min allowed value: 0).
+- minPol: Minimum polarity the text can have (min allowed value: -1).
+- maxPol: Maximum polarity the text can have (max allowed value: 1).
+
+Note: If you don't include a parameter, it defaults to the highest or lowest value available.
+
 ## Process diagram
 
 ![NLP Pipeline process diagram](https://github.com/gessi-chatbots/NLP_pipeline/blob/master/nlp_service_diagram.png?raw=true)
