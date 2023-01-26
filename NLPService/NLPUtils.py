@@ -7,6 +7,7 @@ class NLPUtils:
 
     def __init__(self, nlp: Language):
         self.nlp = nlp
+        # todo move this to the appropriate place
         self.nlp.add_pipe('spacytextblob')
 
     @staticmethod
@@ -28,17 +29,15 @@ class NLPUtils:
         document = self.nlp(text)
         features = []
         for chunk in document.noun_chunks:
-            for syntactic_dependency in relevant_dependencies:
-                lemma = chunk.root.head.lemma_
+            lemma = chunk.root.head.lemma_
+            if chunk.root.dep_ in relevant_dependencies and \
+                    chunk.root.pos_ not in ['PRON'] and \
+                    lemma not in ignore_verbs:
 
-                if chunk.root.dep_ in syntactic_dependency\
-                        and chunk.root.pos_ not in ['PRON']\
-                        and lemma not in ignore_verbs:
+                feature = self.clean_text(chunk)
+                if feature:
 
-                    feature = self.clean_text(chunk)
-
-                    if feature:
-                        features.append(feature)
+                    features.append(feature)
 
         return features
 
