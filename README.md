@@ -33,7 +33,7 @@ This service exposes a NLP component that extracts features from natural languag
 
 ### Direct feature extraction
 1. Run NLPController
-2. Send POST request to http://{your-ip}/extract-features:5000 with the payload described below.
+2. Send POST request to http://{your-ip}:5000/extract-features with the payload described below.
 3. Receive the results in a JSON array.
 
 Sample payload
@@ -56,7 +56,7 @@ Sample payload
 ### Sentiment analysis filtering feature extraction
 
 1. Run NLPController
-2. Send POST request to http://{your-ip}/review-extraction:5000 with the same payload as above.
+2. Send POST request to http://{your-ip}:5000/review-extraction with the same payload as above.
 3. Provide the polarity and subjectiviy thresholds you are interested in.
 4. Receive the results in a JSON array.
 

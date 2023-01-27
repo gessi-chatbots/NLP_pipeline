@@ -36,7 +36,6 @@ class NLPUtils:
 
                 feature = self.clean_text(chunk)
                 if feature:
-
                     features.append(feature)
 
         return features
