@@ -1,2 +1,2 @@
-dependencies=dobj, advcl, appos, ROOT
+dependencies=dobj, ROOT, appos, advcl
 ignore-verbs=

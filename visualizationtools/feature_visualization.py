@@ -20,7 +20,7 @@ def custom_extract_features(self, text: str, relevant_dependencies: list, ignore
 
             feature = self.clean_text(chunk)
             if feature:
-                span = (chunk.root.head.idx, chunk.end_char)
+                span = (min(chunk.root.head.idx, chunk.start_char), chunk.end_char)
                 spans.append(span)
                 features.append(feature)
 
@@ -43,13 +43,15 @@ with open(args['configuration'], 'r', encoding='utf-8') as config_file:
     aux = aux.split('\n')
     for item in aux:
         data = item.split('=')
-        config[data[0]] = data[1].split(',')
+        config[data[0]] = [x.strip() for x in data[1].split(',')]
 
 nlp_model = PipelineBuilder()
 nlp = NLPUtils(nlp_model.get_model())
 nlp.extract_features = custom_extract_features
 
 osmand_doc = nlp.nlp(text_to_process)
+
+
 ft, sp = nlp.extract_features(nlp, text_to_process, config['dependencies'], config['ignore-verbs'])
 
 entities = []
