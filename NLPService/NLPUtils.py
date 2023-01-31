@@ -38,7 +38,7 @@ class NLPUtils:
                     lemma not in ignore_verbs:
 
                 feature = self.clean_text(chunk)
-                if feature:
+                if feature and feature not in features:
                     features.append(feature)
 
         return features
