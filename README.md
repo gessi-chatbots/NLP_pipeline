@@ -32,7 +32,10 @@ This service exposes a NLP component that extracts features from natural languag
 ## How to use
 
 ### Direct feature extraction
-1. Run NLPController
+1. Run NLPController by executing the following command:
+```console
+python NLPController.py
+```
 2. Send POST request to http://{your-ip}:5000/extract-features with the payload described below.
 3. Receive the results in a JSON array.
 
@@ -71,6 +74,16 @@ To define these thresholds, you can include the following parameters in the requ
 - maxPol: Maximum polarity the text can have (max allowed value: 1).
 
 Note: If you don't include a parameter, it defaults to the highest or lowest value available.
+
+### Playground
+
+1. Run the feature_visualization.py script found in visualizationtools folder.
+
+```console
+python feature_visualization.py -f source_file -c config_file
+```
+2. Refer to the sample input files in the folder to see the expected data format.
+
 
 ## Process diagram
 
