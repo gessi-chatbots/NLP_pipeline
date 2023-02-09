@@ -23,6 +23,9 @@ class NLPUtils:
         if pos == "VERB":
             feature_text = f'{text.root.head.lemma_} {final_text}'
             return feature_text
+        if text.root.head == text.root:
+            feature_text = f'{final_text}'
+            return feature_text
         return ""
 
     def extract_features(self, text: str, relevant_dependencies: list, ignore_verbs: list) -> list:
@@ -35,8 +38,7 @@ class NLPUtils:
                     lemma not in ignore_verbs:
 
                 feature = self.clean_text(chunk)
-                if feature:
-
+                if feature and feature not in features:
                     features.append(feature)
 
         return features

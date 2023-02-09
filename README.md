@@ -23,18 +23,37 @@ This service exposes a NLP component that extracts features from natural languag
 | Flask     | Web framework | 2.2.2   |
 
 
-## How to install
+## How to install & deploy
+
+### In local machine
 
 1. Clone project
 2. Install the required packages outlined in "requirements.txt"
-3. Enjoy!
+3.  Run NLPController by executing the following command:
+```console
+python NLPController.py
+```
+4. The service will be available at port 5000.
+
+### In Docker container
+
+1. Clone project
+2. Make sure Docker is installed in the system.
+3. Navigate to the project folder and run the following command:
+```console
+docker build -t {image-name} .
+```
+4. Once the image is built, run the following command:
+```console
+docker run -d -p 5000:5000 {image-name}
+```
+5. The service will be available at port 5000.
 
 ## How to use
 
 ### Direct feature extraction
-1. Run NLPController
-2. Send POST request to http://{your-ip}/extract-features:5000 with the payload described below.
-3. Receive the results in a JSON array.
+1. Send POST request to http://{your-ip}:5000/extract-features with the payload described below.
+2. Receive the results in a JSON array.
 
 Sample payload
 
@@ -56,7 +75,7 @@ Sample payload
 ### Sentiment analysis filtering feature extraction
 
 1. Run NLPController
-2. Send POST request to http://{your-ip}/review-extraction:5000 with the same payload as above.
+2. Send POST request to http://{your-ip}:5000/review-extraction with the same payload as above.
 3. Provide the polarity and subjectiviy thresholds you are interested in.
 4. Receive the results in a JSON array.
 
@@ -71,6 +90,16 @@ To define these thresholds, you can include the following parameters in the requ
 - maxPol: Maximum polarity the text can have (max allowed value: 1).
 
 Note: If you don't include a parameter, it defaults to the highest or lowest value available.
+
+### Playground
+
+1. Run the feature_visualization.py script found in visualizationtools folder.
+
+```console
+python feature_visualization.py -f source_file -c config_file
+```
+2. Refer to the sample input files in the folder to see the expected data format.
+
 
 ## Process diagram
 
