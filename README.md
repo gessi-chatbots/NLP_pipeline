@@ -23,21 +23,37 @@ This service exposes a NLP component that extracts features from natural languag
 | Flask     | Web framework | 2.2.2   |
 
 
-## How to install
+## How to install & deploy
+
+### In local machine
 
 1. Clone project
 2. Install the required packages outlined in "requirements.txt"
-3. Enjoy!
+3.  Run NLPController by executing the following command:
+```console
+python NLPController.py
+```
+4. The service will be available at port 5000.
+
+### In Docker container
+
+1. Clone project
+2. Make sure Docker is installed in the system.
+3. Navigate to the project folder and run the following command:
+```console
+docker build -t {image-name} .
+```
+4. Once the image is built, run the following command:
+```console
+docker run -d -p 5000:5000 {image-name}
+```
+5. The service will be available at port 5000.
 
 ## How to use
 
 ### Direct feature extraction
-1. Run NLPController by executing the following command:
-```console
-python NLPController.py
-```
-2. Send POST request to http://{your-ip}:5000/extract-features with the payload described below.
-3. Receive the results in a JSON array.
+1. Send POST request to http://{your-ip}:5000/extract-features with the payload described below.
+2. Receive the results in a JSON array.
 
 Sample payload
 

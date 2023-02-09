@@ -61,4 +61,4 @@ for f, s in zip(ft, sp):
 
 osmand_doc.ents = entities
 
-displacy.serve(osmand_doc, style="ent", host='localhost', options={"colors": {"feature": 'grey'}})
+displacy.serve(osmand_doc, style="ent", host='localhost', options={"colors": {"feature": '#CBC3E3'}})
