@@ -1,2 +1,2 @@
 dependencies=dobj, ROOT, appos, advcl
-ignore-verbs=
+ignore-verbs=purchase, enjoy
