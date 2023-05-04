@@ -2,6 +2,7 @@ import argparse
 import csv
 import json
 import sys
+from collections import OrderedDict
 from json import JSONDecodeError
 
 metrics = {
@@ -33,8 +34,17 @@ except FileNotFoundError:
     sys.exit("Specified file not found.")
 
 metrics['apps'] = len(data)
+histogram = {}
 
 for app in data:
+
+    if app['features'] is None:
+        histogram[0] += 1
+    elif len(app['features']) in histogram:
+        histogram[len(app['features'])] += 1
+    else:
+        histogram[len(app['features'])] = 1
+
     metrics['summaries'] = metrics['summaries'] + ('summary' in app.keys())
     metrics['descriptions'] = metrics['descriptions'] + ('description' in app.keys())
     metrics['changelogs'] = metrics['changelogs'] + ('changelog' in app.keys())
@@ -52,9 +62,18 @@ for metric in metrics.keys():
     tabs = '\t' * (7 - tabs)
     print(f'{metric}{tabs}{metrics[metric]}')
 
+histogram = OrderedDict(sorted(histogram.items()))
+
+
 report_file_name = f'{source_file.split(".")[0]}-report.csv'
 
 with open(report_file_name, 'w', encoding='utf-8') as file:
     w = csv.DictWriter(file, metrics.keys())
     w.writeheader()
     w.writerow(metrics)
+
+histogram_file_name = f'{source_file.split(".")[0]}-histogram.csv'
+with open(histogram_file_name, 'w', encoding='utf-8') as file:
+    w = csv.DictWriter(file, histogram.keys())
+    w.writeheader()
+    w.writerow(histogram)
