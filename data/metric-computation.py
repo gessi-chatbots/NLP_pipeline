@@ -34,7 +34,7 @@ except FileNotFoundError:
     sys.exit("Specified file not found.")
 
 metrics['apps'] = len(data)
-histogram = {}
+histogram = {0: 0}
 
 for app in data:
 
@@ -63,7 +63,6 @@ for metric in metrics.keys():
     print(f'{metric}{tabs}{metrics[metric]}')
 
 histogram = OrderedDict(sorted(histogram.items()))
-
 
 report_file_name = f'{source_file.split(".")[0]}-report.csv'
 
