@@ -19,7 +19,6 @@ metrics = {
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-f', '--file', required=True, help="The file to be analyzed.")
-# ap.add_argument('-o', '--output', required=False, help="File with the customization parameters.")
 
 args = vars(ap.parse_args())
 
@@ -45,10 +44,11 @@ for app in data:
     else:
         histogram[len(app['features'])] = 1
 
-    metrics['summaries'] = metrics['summaries'] + ('summary' in app.keys())
-    metrics['descriptions'] = metrics['descriptions'] + ('description' in app.keys())
-    metrics['changelogs'] = metrics['changelogs'] + ('changelog' in app.keys())
-    metrics['reviews'] = metrics['reviews'] + len(app['reviews']) if 'reviews' in app.keys() and app['reviews'] else 0
+    metrics['summaries'] = metrics['summaries'] + ('summary' in app.keys() and app['summary'] is not None)
+    metrics['descriptions'] = metrics['descriptions'] + ('description' in app.keys() and app['description'] is not None)
+    metrics['changelogs'] = metrics['changelogs'] + ('changelog' in app.keys() and app['changelog'] is not None)
+    metrics['reviews'] = metrics['reviews'] + \
+                         (len(app['reviews']) if 'reviews' in app.keys() and app['reviews'] is not None else 0)
     metrics['features'] = metrics['features'] + \
                           (len(app['features']) if 'features' in app.keys() and app['features'] else 0)
     if 'features' in app.keys() and app['features']:
