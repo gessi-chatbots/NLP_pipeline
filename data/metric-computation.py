@@ -5,14 +5,6 @@ import sys
 from collections import OrderedDict
 from json import JSONDecodeError
 
-APP_KEY = {
-    'summaries': 'summary',
-    'reviews': 'reviews',
-    'descriptions': 'description',
-    'changelogs': 'changelog',
-    'features': 'features'
-}
-
 metrics = {
     'summaries': 0,
     'apps': 0,
@@ -27,7 +19,6 @@ metrics = {
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-f', '--file', required=True, help="The file to be analyzed.")
-# ap.add_argument('-o', '--output', required=False, help="File with the customization parameters.")
 
 args = vars(ap.parse_args())
 
