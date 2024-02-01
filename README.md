@@ -1,11 +1,11 @@
-## Feature extraction service
+## TransFeatEx tool
 
-NLP service that, given a text about an app, extracts the features of the app mentioned.
+TransFeatEx is a feature extraction tool which combines consolidated syntactic and semantic feature extraction techniques with the use of a RoBERTa-based pre-trained model to automatically extract mobile app features from app-related textual documents.
 
 ## Description
 
-This service exposes a NLP component that extracts features from natural language text related to a mobile app.
-
+The main goal of the TransFeatEx tool is to support researchers and developers in the development of projects, tools and processes which require from structured data concerning the set of features exposed by a catalogue of mobile applications. % published in mobile app stores or repositories. Without the need of annotated data, TransFeatEx leverages the accuracy of pre-trained transformer models to enrich the natural language texts received as input (such as descriptions or user-generated reviews) with linguistic annotations, and then uses such annotations to apply consolidated syntactic and semantic techniques in order to extract features from said texts. 
+TransFeatEx includes customization capabilities to fine-tune feature detection tasks (e.g., POS patterns, syntactic dependency patterns) to allow for domain and context adaptation of the feature extraction process. 
 
 ## File structure
 
