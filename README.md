@@ -33,7 +33,11 @@ TransFeatEx includes customization capabilities to fine-tune feature detection t
 ```console
 python NLPController.py
 ```
-4. The service will be available at port 5000.
+4. Install spaCy model 'en_core_web_trf'
+```console
+python -m spacy download en_core_web_trf
+```
+5. The service will be available at port 5000.
 
 ### In Docker container
 
