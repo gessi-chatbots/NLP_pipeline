@@ -56,6 +56,25 @@ def create_app():
             to_return.append({'id': text['id'], 'features': features})
 
         return json.dumps(to_return, indent=4)
+    
+    @app.route('/extract-features-aux', methods=['POST'])
+    def get_features_without_sentence_id():
+        data = None
+        ignore_verbs = 'ignore-verbs' in request.json.keys()
+        received_dependencies = 'dependencies' in request.json.keys()
+        if 'text' not in request.json.keys():
+            return "Lacking textual data in proper tag.", 400
+        try:
+            data = request.get_json()
+        except BadRequest:
+            return "Input data has a formatting error.", 400
+
+        verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else []
+
+        dependencies = data['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
+        features = nlp.extract_features(data['text'], dependencies, verbs_to_ignore)
+        print(features)
+        return json.dumps(features, indent=4)
 
     @app.route('/review-extraction', methods=['POST'])
     def process_reviews():
@@ -91,4 +110,4 @@ def create_app():
 
 if __name__ == "__main__":
     flask_app = create_app()
-    flask_app.run(host='0.0.0.0')
+    flask_app.run(host='0.0.0.0', port = '3002')

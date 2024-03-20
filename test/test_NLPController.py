@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 
 import pytest as pytest
 
-from NLPController import create_app, nlp
+from wsgi import create_app, nlp
 
 test_default_dependencies = ['dobj', 'advcl', 'appos', 'ROOT']
 
