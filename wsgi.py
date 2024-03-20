@@ -68,13 +68,22 @@ def create_app():
             data = request.get_json()
         except BadRequest:
             return "Input data has a formatting error.", 400
-
-        verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else []
-
-        dependencies = data['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
-        features = nlp.extract_features(data['text'], dependencies, verbs_to_ignore)
-        print(features)
-        return json.dumps(features, indent=4)
+        
+        try:
+            verbs_to_ignore = []
+            if 'ignore-verbs' in data: 
+                verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else []
+            dependencies = ['dobj', 'advcl', 'appos', 'ROOT']
+            if 'dependencies' in data:
+                dependencies = data['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
+            if 'text' in data: 
+                features = nlp.extract_features(data['text'], dependencies, verbs_to_ignore)
+                print(features)
+                return json.dumps(features, indent=4)
+            else: 
+                return "Input data has a formatting error.", 400
+        except Exception as e:
+            return json.dumps([], indent=4)
 
     @app.route('/review-extraction', methods=['POST'])
     def process_reviews():
