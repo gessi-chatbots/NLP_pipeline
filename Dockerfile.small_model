@@ -12,4 +12,4 @@ RUN python -m spacy download en_core_web_sm
 
 ENTRYPOINT [ "python" ]
 
-CMD ["NLPController.py" ]
+CMD ["-m", "flask", "run", "--host=0.0.0.0", "--port=3002"]
