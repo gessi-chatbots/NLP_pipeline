@@ -104,6 +104,12 @@ python feature_visualization.py -f source_file -c config_file
 ```
 2. Refer to the sample input files in the folder to see the expected data format.
 
+## How to deploy
+1. 
+    `docker build -t transfeatex:latest .`
+2. 
+    `docker run -d --name TransFeatEx -p 3004:3004 transfeatex:latest`
+
 
 ## Process diagram
 
