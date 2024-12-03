@@ -45,7 +45,16 @@ def create_app():
 
         to_return = []
 
-        verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else []
+        verbs_to_ignore = data['ignore-verbs'] if ignore_verbs else [
+            "love", "hate", "enjoy", "admire", "adore", "despise", "cherish", "regret",
+            "forgive", "fear", "crave", "miss", "appreciate", "expect", "hope", "wish",
+            "remember", "forget", "imagine", "understand", "believe", "doubt", "assume",
+            "realize", "care", "complain", "worry", "trust", "wonder", "surprise", 
+            "amaze", "astonish", "fascinate", "impress", "bore", "annoy", "irritate", 
+            "anger", "confuse", "disappoint", "excite", "inspire", "motivate", "amuse",
+            "entertain", "satisfy", "please", "frustrate", "overwhelm", "reassure", 
+            "relax", "stress", "scare", "shock", "startle", "terrify", "oppose", 
+            "encourage", "discourage", "criticize", "praise", "thank", "apologize"]
 
         dependencies = data['dependencies'] if received_dependencies else ['dobj', 'advcl', 'appos', 'ROOT']
 
@@ -119,4 +128,4 @@ def create_app():
 
 if __name__ == "__main__":
     flask_app = create_app()
-    flask_app.run(host='0.0.0.0', port = '3002')
+    flask_app.run(host='0.0.0.0', port = '5000')

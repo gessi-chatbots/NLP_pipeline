@@ -1,2 +1,2 @@
 dependencies=dobj, ROOT, appos, advcl
-ignore-verbs=purchase, enjoy
+ignore-verbs=love, hate, enjoy, admire, adore, despise, cherish, regret, forgive, fear, crave, miss, appreciate, expect, hope, wish, remember, forget, imagine, understand, believe, doubt, assume, realize, care, complain, worry, trust, wonder, surprise, amaze, astonish, fascinate, impress, bore, annoy, irritate, anger, confuse, disappoint, excite, inspire, motivate, amuse, entertain, satisfy, please, frustrate, overwhelm, reassure, relax, stress, scare, shock, startle, terrify, oppose, encourage, discourage, criticize, praise
